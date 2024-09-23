@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./PlayVideo.css";
 import viedo1 from "../../assets/viedo1.mp4";
-import like from "../../assets/like.png";
-import dislike from "../../assets/dislike.png";
+import like from "../../assets/thumbs-up.svg";
+import dislike from "../../assets/thumbs-down.svg";
 import share from "../../assets/share.svg";
 import save from "../../assets/save.png";
 import jack from "../../assets/jack.png";
-import user_profile from "../../assets/user_profile.jpg";
+import user_profile from "../../assets/user.svg";
 import { API_KEY , value_converter } from "../../data";
 import moment from "moment";
 import { useParams } from "react-router-dom";
+
 
 const PlayVideo = () => {
 
@@ -20,6 +21,11 @@ const PlayVideo = () => {
   const [channelData,setChannelData] = useState(null)
 
   const [commentdata,setCommentdata] = useState(null)
+
+ 
+
+
+
 
 
   const fetchVideoData = async() => {
@@ -73,9 +79,9 @@ const PlayVideo = () => {
       </div>
       <hr />
       <div className="publisher">
-        <img src={channelData?channelData.snippet.thumbnails.default.url:""} alt="" />
+        <img src={channelData?channelData.snippet.thumbnails.default.url:user_profile} alt="" />
         <div>
-          <p>{apiData?apiData.snippet.channelTitle:""}</p>
+          <p>{apiData?apiData.snippet.title:"xyz"}</p>
           <span>{channelData?value_converter(channelData.statistics.subscriberCount):"1M"} Suscribers</span>
         </div>
         <button>Subscribe</button>
@@ -120,7 +126,67 @@ const PlayVideo = () => {
             )
           })
         }
+
+
+<div className="comment">
+          <img src={user_profile} alt="" />
+          <div>
+            <h3>
+             Amet officia excepteur tempor minim minim sit<span>1 day ago</span>
+            </h3>
+            <p>
+                
+                  Quiccaecat ex excepteur velit aliquip. Lorem commodo esse eu et duis adipisicing. Nulla enim esse cillum dolor sunt voluptate adipisicing voluptate. Adipisicing aute voluptate proident magna ex laborum enim. Reprehenderit fugiat sit sunt velit sint mollit incididunt labore do ea ipsum sit fugiat. Laboris eu labore duis id. Amet irure laboris ea et pariatur velit cupidatat elit duis commodo proident cupidatat adipisicing adipisicing.
+                
+            </p>
+            <div className="comment-action">
+              <img src={like} alt="" />
+              <span>67k</span>
+              <img src={dislike} alt="" />
+            </div>
+          </div>
+        </div>
+
       
+      
+        <div className="comment">
+          <img src={user_profile} alt="" />
+          <div>
+            <h3>
+             Amet officia excepteur tempor minim minim sit<span>1 day ago</span>
+            </h3>
+            <p>
+                
+                  Quiccaecat ex excepteur velit aliquip. Lorem commodo esse eu et duis adipisicing. Nulla enim esse cillum dolor sunt voluptate adipisicing voluptate. Adipisicing aute voluptate proident magna ex laborum enim. Reprehenderit fugiat sit sunt velit sint mollit incididunt labore do ea ipsum sit fugiat. Laboris eu labore duis id. Amet irure laboris ea et pariatur velit cupidatat elit duis commodo proident cupidatat adipisicing adipisicing.
+                
+            </p>
+            <div className="comment-action">
+              <img src={like} alt="" />
+              <span>67k</span>
+              <img src={dislike} alt="" />
+            </div>
+          </div>
+        </div>
+
+
+        <div className="comment">
+          <img src={user_profile} alt="" />
+          <div>
+            <h3>
+             Amet officia excepteur tempor minim minim sit<span>1 day ago</span>
+            </h3>
+            <p>
+                
+                  Quiccaecat ex excepteur velit aliquip. Lorem commodo esse eu et duis adipisicing. Nulla enim esse cillum dolor sunt voluptate adipisicing voluptate. Adipisicing aute voluptate proident magna ex laborum enim. Reprehenderit fugiat sit sunt velit sint mollit incididunt labore do ea ipsum sit fugiat. Laboris eu labore duis id. Amet irure laboris ea et pariatur velit cupidatat elit duis commodo proident cupidatat adipisicing adipisicing.
+                
+            </p>
+            <div className="comment-action">
+              <img src={like} alt="" />
+              <span>67k</span>
+              <img src={dislike} alt="" />
+            </div>
+          </div>
+        </div>
 
  
       </div>

@@ -3,6 +3,7 @@ import "./Feed.css";
 import moment from "moment";
 import { useContext } from "react";
 import { BioContext } from "../../context";
+import { useNavigate } from "react-router-dom";
 
 import { Link } from "react-router-dom";
 import { API_KEY , value_converter } from "../../data";
@@ -10,7 +11,19 @@ import { API_KEY , value_converter } from "../../data";
 const Feed = ({ category }) => {
   console.log(API_KEY);
 
+
   const {menu,setMenu} = useContext(BioContext) 
+
+  const navigate = useNavigate()
+
+
+  const TransFormFunction = (link) => {
+ 
+    navigate(link)
+    window.scrollTo(0, 0);
+    
+  }
+
 
   // https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&maxResults=50&regionCode=US&videoCategoryId=0&key=[YOUR_API_KEY]
 
@@ -25,18 +38,19 @@ const Feed = ({ category }) => {
 
   useEffect(() => {
     fetchData();
+    TransFormFunction()
   }, [category]);
 
   return (
     <div className="feed" style= {{ marginLeft: menu ? "15vw" : "6vw" }}>
       {data?.map((item, index) => {
         return (
-          <Link to={`video/${item.snippet.categoryId}/${item.id}`} className="card">
+          <div onClick={()=>TransFormFunction(`video/${item.snippet.categoryId}/${item.id}`)} className="card">
             <img src={item.snippet.thumbnails.medium.url} alt="" />
             <h2>{item.snippet.title}</h2>
             <h3>{item.snippet.channelTitle}</h3>
             <p>{value_converter(item.statistics.viewCount)} views &bull; {moment(item.snippet.publishedAt).fromNow()}</p>
-          </Link>
+          </div>
         );
       })}
     </div>

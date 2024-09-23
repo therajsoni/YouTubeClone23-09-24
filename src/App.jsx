@@ -5,11 +5,15 @@ import Home from './pages/Home/Home'
 import Video from './pages/Video/Video'
 import { useContext } from 'react'
 import { BioContext } from './context'
+// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Loader from './Loader'
+
 
 
 const App = () => {
 
-  const {setMenu} = useContext(BioContext)
+  const {setMenu} = useContext(BioContext);
+  document.body.style.backgroundColor = "orange"
 
   const [sidebar,setSidebar] = useState(true);
  useEffect(()=>{
@@ -24,6 +28,7 @@ const App = () => {
 
 
   return (
+      // <Suspense fallback={<Loader/>} >
     <div>
       <Navbar setSidebar={setSidebar} />
       <Routes>
@@ -31,6 +36,7 @@ const App = () => {
         <Route path='/video/:categoryId/:videoId' element={<Video/>} />
       </Routes>
     </div>
+// </Suspense>
   )
 }
 

@@ -9,7 +9,7 @@ const Home = ({ sidebar }) => {
   return (
     <div>
       <Sildebar sidebar={sidebar} category={category} setCategory={setCategory} />
-      <div className={`container ${sidebar ? "" : "large-container"}`}></div>
+      {/* <div className={`container ${sidebar ? "" : "large-container"}`}></div> */}
       <Feed category={category} />
     </div>
   );

@@ -3,7 +3,7 @@ nav{
     justify-content: space-between;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
     position: sticky;
-    background: #fff;
+    background: white;
     top: 0;
     z-index:10;  
 }
@@ -12,6 +12,7 @@ nav{
 .nav-left .menu_icon{
     width: 32px;
     margin-right: 25px;
+   color: red;
 }
 
 .nav-left .logo{
@@ -20,15 +21,19 @@ nav{
 }
 
 .nav-middle .search-box{
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     margin-right: 15px;
     padding: 8px 12px;
     border-radius: 25px;
+    /* background-color: white; */
+    
 }
 
 .nav-middle .search-box input{
-    width: 400px;
-    border: 0;
+    font-size: 20px;
+    font-weight: 700;
+    width: 450px;
+    border: none;
     outline: 0;
     background: transparent;
 }

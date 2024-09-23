@@ -1,12 +1,12 @@
 import React from "react";
 import "./Navbar.css";
 import logo from "../../assets/logo1.png";
-import menu_icon from "../../assets/menu.png";
-import search_icon from '../../assets/search.png';
-import upload_icon from '../../assets/upload.png'
-import more_icon from '../../assets/more.png';
-import notification_icon from '../../assets/notification.png'         
-import profile_icon from '../../assets/jack.png'
+import menu_icon from "../../assets/menu.svg";
+import search_icon from '../../assets/search.svg';
+import upload_icon from '../../assets/download.svg'
+import more_icon from '../../assets/plus.svg';
+import notification_icon from '../../assets/bell.svg'         
+import profile_icon from '../../assets/user.svg'
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { BioContext } from "../../context";

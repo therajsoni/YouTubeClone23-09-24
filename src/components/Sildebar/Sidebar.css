@@ -1,11 +1,13 @@
 .sidebar{
-    background: red;
+    
+   
     width:13%;
     height:100vh;
     position:fixed;
     top: 0;
     padding-left: 2%;
     padding-top:80px;
+    background-color: green
 }
 
 .shortcut-links img{
